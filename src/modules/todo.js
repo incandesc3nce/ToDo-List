@@ -7,4 +7,8 @@ export default class Todo {
     this.notes = notes;
     this.done = false;
   }
+
+  toggleDone() {
+    this.done = !this.done;
+  }
 }
