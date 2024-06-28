@@ -73,7 +73,7 @@ aside {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
 
-  padding: 0.5rem 0.5rem 0.5rem 2rem;
+  padding: 0.5rem 2rem 0 2rem;
 
   background-color: #f3f3f3;
   color: var(--text-color);
@@ -82,6 +82,31 @@ aside h2 {
   margin-bottom: 0.5rem;
 
   font-size: min(2.2rem, 3.8vw);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+aside h2 span {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+aside h2 button {
+  border: 0;
+  background-color: inherit;
+  color: var(--text-color);
+
+  font-size: min(2.5rem, 3.8vw);
+
+  transition-duration: 0.3s;
+}
+aside h2 button:hover {
+  cursor: pointer;
+
+  rotate: 90deg;
+  scale: 1.2;
 }
 
 main {
