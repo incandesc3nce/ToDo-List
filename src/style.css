@@ -140,6 +140,4 @@ footer a {
 .project:hover {
   font-weight: 550;
   font-size: min(1.8rem, 4vw);
-
-  border-bottom: 2px solid var(--text-color);
 }
