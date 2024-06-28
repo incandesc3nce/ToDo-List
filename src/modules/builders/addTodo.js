@@ -41,6 +41,9 @@ export default function addTodo(todo) {
   doneCheckbox.addEventListener("change", () => {
     todo.toggleDone();
   });
+
+  doneCheckbox.checked = todo.done;
+  
   todoSummary.appendChild(done);
 
   
@@ -65,6 +68,8 @@ export default function addTodo(todo) {
   }
   
   todoDetails.appendChild(notes);
+
+
 
   todoList.appendChild(todoElement);
 }
