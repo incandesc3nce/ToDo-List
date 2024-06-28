@@ -1,6 +1,7 @@
 import getPriorityCircle from "../helpers/getPriorityCircle";
+import removeTodo from "../builders/removeTodo";
 
-export default function addTodo(todo) {
+export default function addTodo(todo, project) {
   const todoList = document.getElementById("list");
   const todoElement = document.createElement("li");
   todoElement.classList.add("todo");
@@ -43,9 +44,19 @@ export default function addTodo(todo) {
   });
 
   doneCheckbox.checked = todo.done;
-  
+
   todoSummary.appendChild(done);
 
+  const deleteButton = document.createElement("button");
+  deleteButton.classList.add("delete-todo");
+  deleteButton.textContent = "⮾";
+
+  deleteButton.addEventListener("click", () => {
+    removeTodo(todoElement);
+    project.removeTodo(todo);
+  });
+
+  todoSummary.appendChild(deleteButton);
   
   todoElement.appendChild(todoDetails);
   
