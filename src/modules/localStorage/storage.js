@@ -1,4 +1,6 @@
-import { add } from "date-fns";
+import createProject from '../builders/createProject';
+import createTodo from '../builders/createTodo';
+import { projectsContainer } from '../projectContainer';
 
 export const storageHandler = (function() {
   let storage;
@@ -28,5 +30,35 @@ export const storageHandler = (function() {
     storage.removeItem();
   }
 
-  return {storageAvailable, getProjects, setProjects, removeProject};
+  function start() {
+    if (storageAvailable()) {
+      const projects = getProjects();
+      if (projects) {
+        const objects = JSON.parse(projects);
+        objects.forEach(object => {
+          const project = createProject(object.title);
+          projectsContainer.addProject(project);
+    
+          object.todos.forEach(todo => {
+            const todoObject = createTodo(todo.title, todo.description, todo.dueDate, todo.priority, todo.notes);
+            project.addTodo(todoObject);
+          })
+      })
+      } else {
+        const defaultProject = createProject('Home Chores');
+        projectsContainer.addProject(defaultProject);
+    
+        const todo = createTodo('Buy milk', 'We need to buy milk, it is very important.', '13.12.2024', 'Low', 'must do this asap!');
+        const todo2 = createTodo('Wash dishes', 'Sink is full of dirty dishes, time to free the sink.', '13.12.2024', 'Medium', '');
+        const todo3 = createTodo('Make dinner', 'Dinner needs to be made this evening, no one wants to stay hungry!', '13.12.2024', 'High', 'would like to make some lasagna');
+        defaultProject.addTodo(todo);
+        defaultProject.addTodo(todo2);
+        defaultProject.addTodo(todo3);
+    
+        setProjects(projectsContainer.getProjects());
+      }
+    }
+  }
+
+  return {start, setProjects, removeProject};
 })();
