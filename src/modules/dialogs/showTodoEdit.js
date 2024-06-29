@@ -1,6 +1,8 @@
 import removeDialog from "../helpers/removeDialog";
 import { format } from "date-fns";
 import getPriorityCircle from "../helpers/getPriorityCircle";
+import { storageHandler } from "../localStorage/storage";
+import { projectsContainer } from "../projectContainer";
 
 export default function showTodoEdit(todo) {
   const dialog = document.createElement("dialog");
@@ -118,6 +120,8 @@ export default function showTodoEdit(todo) {
     todo.priority = priority.value;
     todo.description = description.value;
     todo.notes = notes.value;
+
+    storageHandler.setProjects(projectsContainer.getProjects());
     dialog.close();
   });
 

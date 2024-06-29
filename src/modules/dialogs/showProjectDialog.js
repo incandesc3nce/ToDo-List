@@ -2,6 +2,7 @@ import removeDialog from "../helpers/removeDialog";
 import createProject from "../builders/createProject";
 import showProject from "../builders/showProject";
 import { projectsContainer } from "../projectContainer";
+import { storageHandler } from "../localStorage/storage";
 
 export default function showProjectDialog() {
   const dialog = document.createElement("dialog");
@@ -57,6 +58,8 @@ export default function showProjectDialog() {
       projectsContainer.addProject(newProject);
       showProject(newProject);
     }
+
+    storageHandler.setProjects(projectsContainer.getProjects());
     dialog.close();
   });
 
