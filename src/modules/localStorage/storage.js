@@ -26,10 +26,6 @@ export const storageHandler = (function() {
     storage.setItem('projects', JSON.stringify(projects));
   }
 
-  function removeProject(project) {
-    storage.removeItem();
-  }
-
   function start() {
     if (storageAvailable()) {
       const projects = getProjects();
@@ -62,5 +58,5 @@ export const storageHandler = (function() {
 
   start();
 
-  return {setProjects, removeProject};
+  return {setProjects};
 })();

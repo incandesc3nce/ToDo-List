@@ -165,6 +165,11 @@ footer a {
   height: 75vh;
 }
 
+.project-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .project {
   border: 0;
   background-color: inherit;
@@ -177,7 +182,7 @@ footer a {
 
   transition-duration: 0.2s;
 
-  color: var(--text-color)
+  color: var(--text-color);
 }
 
 .active-project {
@@ -256,18 +261,27 @@ footer a {
   cursor: pointer;
 }
 
-.delete-todo {
+.delete-todo, .delete-project {
   border: 0;
   background-color: inherit;
 
   color: #ff7373;
-  font-size: min(2rem, 4vw);
 
   font-weight: 600;
+
+  transition-duration: 0.3s;
 }
 
-.delete-todo:hover {
+.delete-todo {
+  font-size: min(2rem, 4vw);
+}
+.delete-project {
+  font-size: min(1.5rem, 3vw);
+}
+
+.delete-todo:hover, .delete-project:hover {
   cursor: pointer;
+  scale: 1.2;
 }
 
 .edit-container {
