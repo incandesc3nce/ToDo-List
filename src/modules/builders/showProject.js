@@ -10,7 +10,7 @@ export default function showProject(project) {
   projectList.appendChild(projectElement);
 
   projectElement.addEventListener("click", () => {
-    clearList(document.getElementById("list"));
+    clearList(document.getElementById("content"));
     showTodos(project);
     setActiveProject(projectElement);
   });
