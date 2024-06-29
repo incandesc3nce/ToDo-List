@@ -3,6 +3,7 @@ import createTodo from "../builders/createTodo";
 import showTodo from "../builders/showTodo";
 import { projects } from "../projectContainer";
 import getCurrentProject from "../helpers/getCurrentProject";
+import { format } from "date-fns"; 
 
 export default function showTodoDialog() {
   const dialog = document.createElement("dialog");
@@ -124,7 +125,9 @@ export default function showTodoDialog() {
       description.value = "No description";
     }
 
-    const todo = createTodo(title.value, description.value, dueDate.value, priority.value, notes.value);
+    const formattedDate = format(dueDate.value, "dd.MM.yyyy");
+
+    const todo = createTodo(title.value, description.value, formattedDate, priority.value, notes.value);
     showTodo(todo);
     projects[getCurrentProject()].addTodo(todo);
 
