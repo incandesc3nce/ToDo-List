@@ -1,5 +1,6 @@
 import getPriorityCircle from "../helpers/getPriorityCircle";
 import removeTodo from "./removeTodo";
+import showTodoEdit from "../dialogs/showTodoEdit";
 
 export default function showTodo(todo, project) {
   const todoList = document.getElementById("list");
@@ -71,14 +72,28 @@ export default function showTodo(todo, project) {
   const notesText = document.createElement("p");
   notesText.textContent = `${todo.notes}`;
 
+  const editContainer = document.createElement("div");
+  editContainer.classList.add("edit-container");
+
+  const edit = document.createElement("button");
+  edit.textContent = "Edit";
+  edit.classList.add("edit");
+  
+  editContainer.appendChild(edit);
+  
   if (todo.notes !== "" && todo.notes !== undefined) {
     notes.appendChild(notesTitle);
     notes.appendChild(notesText);
-
+    
     todoDetails.appendChild(notes);
   }
-
+  
   todoDetails.appendChild(notes);
+  todoDetails.appendChild(editContainer);
 
+  edit.addEventListener('click', () => {
+    showTodoEdit(todo);
+  });
+  
   todoList.appendChild(todoElement);
 }

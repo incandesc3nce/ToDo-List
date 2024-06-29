@@ -13,7 +13,6 @@ export const projectsContainer = (function() {
   };
 
   const addProject = (project) => {
-    console.log(projects);
     projects.push(project);
   };
 
