@@ -1,6 +1,8 @@
 import getPriorityCircle from "../helpers/getPriorityCircle";
 import removeTodo from "./removeTodo";
 import showTodoEdit from "../dialogs/showTodoEdit";
+import { storageHandler } from "../localStorage/storage";
+import { projectsContainer } from "../projectContainer";
 
 export default function showTodo(todo, project) {
   const todoList = document.getElementById("list");
@@ -55,6 +57,8 @@ export default function showTodo(todo, project) {
   deleteButton.addEventListener("click", () => {
     removeTodo(todoElement);
     project.removeTodo(todo);
+
+    storageHandler.setProjects(projectsContainer.getProjects());
   });
 
   todoSummary.appendChild(deleteButton);
