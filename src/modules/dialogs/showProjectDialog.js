@@ -1,7 +1,7 @@
 import removeDialog from "../helpers/removeDialog";
 import createProject from "../builders/createProject";
 import showProject from "../builders/showProject";
-import { projects } from "../projectContainer";
+import { projectsContainer } from "../projectContainer";
 
 export default function showProjectDialog() {
   const dialog = document.createElement("dialog");
@@ -54,7 +54,7 @@ export default function showProjectDialog() {
     }
     if (title) {
       const newProject = createProject(title);
-      projects.push(newProject);
+      projectsContainer.addProject(newProject);
       showProject(newProject);
     }
     dialog.close();

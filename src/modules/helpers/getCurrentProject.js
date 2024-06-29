@@ -1,9 +1,9 @@
 import { getActiveProject } from "./activeProject";
-import { projects } from "../projectContainer";
+import { projectsContainer } from "../projectContainer";
 
 export default function getCurrentProject() {
   const activeProject = getActiveProject();
   const projectTitle = activeProject.textContent;
 
-  return projects.findIndex(project => project.title === projectTitle);
+  return projectsContainer.getProjects().findIndex(project => project.title === projectTitle);
 }
