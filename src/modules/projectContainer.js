@@ -23,15 +23,3 @@ export const projectsContainer = (function() {
 
   return {addProject, removeProject, getProject, getProjects};
 })();
-
-
-const project = createProject('Home Chores');
-
-projectsContainer.addProject(project);
-
-const todo = createTodo('Buy milk', 'We need to buy milk, it is very important.', '13.12.2024', 'Low', 'must do this asap!');
-const todo2 = createTodo('Wash dishes', 'Sink is full of dirty dishes, time to free the sink.', '13.12.2024', 'Medium', '');
-const todo3 = createTodo('Make dinner', 'Dinner needs to be made this evening, no one wants to stay hungry!', '13.12.2024', 'High', 'would like to make some lasagna');
-project.addTodo(todo);
-project.addTodo(todo2);
-project.addTodo(todo3);
