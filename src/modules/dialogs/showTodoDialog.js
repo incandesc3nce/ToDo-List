@@ -126,9 +126,7 @@ export default function showTodoDialog() {
       description.value = "No description";
     }
 
-    const formattedDate = format(dueDate.value, "dd.MM.yyyy");
-
-    const todo = createTodo(title.value, description.value, formattedDate, priority.value, notes.value);
+    const todo = createTodo(title.value, description.value, dueDate.value, priority.value, notes.value);
     showTodo(todo);
     projectsContainer.getProject(getCurrentProject()).addTodo(todo);
 

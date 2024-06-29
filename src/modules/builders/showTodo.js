@@ -21,7 +21,7 @@ export default function showTodo(todo, project) {
   todoDetails.classList.add("todo-upper");
 
   const dueDate = document.createElement("p");
-  dueDate.textContent = `${format(new Date(todo.dueDate), "dd.MM.yyyy")}`;
+  dueDate.textContent = `${format(todo.dueDate, "dd.MM.yyyy")}`;
   todoSummary.appendChild(dueDate);
 
   const priority = document.createElement("p");
