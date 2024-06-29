@@ -31,6 +31,7 @@ export default function showProject(project) {
   deleteButton.addEventListener("click", () => {
     projectList.removeChild(projectContainer);
     projectsContainer.removeProject(project);
+    clearList(document.getElementById("content"));
     storageHandler.setProjects(projectsContainer.getProjects());
   });
 }
