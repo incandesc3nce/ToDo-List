@@ -1,4 +1,4 @@
-function getActiveProject() {
+export function getActiveProject() {
   return document.querySelector(".active-project");
 }
 
