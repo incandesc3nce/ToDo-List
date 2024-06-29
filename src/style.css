@@ -69,6 +69,10 @@ header h1 {
   font-size: min(3rem, 5vw);
 }
 
+aside, main h2 {
+  color: var(--text-color);
+}
+
 aside {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
@@ -76,17 +80,19 @@ aside {
   padding: 0.5rem 2rem 0 2rem;
 
   background-color: #f3f3f3;
-  color: var(--text-color);
 }
+
 aside h2 {
-  margin-bottom: 0.5rem;
-
-  font-size: min(2.2rem, 3.8vw);
-
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
 
+aside h2, main h2 {
+  margin-bottom: 0.5rem;
+
+  font-size: min(2.2rem, 3.8vw);
+  
   height: 2.5rem;
 }
 
@@ -95,7 +101,7 @@ aside h2 span {
   justify-content: center;
   align-items: center; 
 }
-aside h2 button {
+h2 button {
   border: 0;
   background-color: inherit;
   color: var(--text-color);
@@ -108,20 +114,27 @@ aside h2 button {
 
   line-height: 1.5rem;
 }
-aside h2 button:hover {
+h2 button:hover {
   cursor: pointer;
 
-  rotate: 90deg;
   scale: 1.2;
 }
 
-aside h2 button:focus {
+h2 button:focus {
   outline: none;
 }
 
 main {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
+}
+
+main h2 {
+  margin-bottom: 1.5rem;
+}
+
+main h2, main #list {
+  padding: 0.5rem 2rem 0 2rem;
 }
 
 footer {
@@ -182,7 +195,7 @@ footer a {
 }
 
 #list {
-  padding: 1rem 2rem;
+  padding: 1rem 2rem 1rem 0;
 
   display: flex;
   flex-direction: column;
