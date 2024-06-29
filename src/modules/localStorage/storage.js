@@ -40,7 +40,7 @@ export const storageHandler = (function() {
           projectsContainer.addProject(project);
     
           object.todos.forEach(todo => {
-            const todoObject = createTodo(todo.title, todo.description, todo.dueDate, todo.priority, todo.notes);
+            const todoObject = createTodo(todo.title, todo.description, todo.dueDate, todo.priority, todo.notes, todo.done);
             project.addTodo(todoObject);
           })
       })

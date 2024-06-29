@@ -44,6 +44,7 @@ export default function showTodo(todo, project) {
 
   doneCheckbox.addEventListener("change", () => {
     todo.toggleDone();
+    storageHandler.setProjects(projectsContainer.getProjects());
   });
 
   doneCheckbox.checked = todo.done;
