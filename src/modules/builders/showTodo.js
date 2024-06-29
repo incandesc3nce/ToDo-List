@@ -3,6 +3,7 @@ import removeTodo from "./removeTodo";
 import showTodoEdit from "../dialogs/showTodoEdit";
 import { storageHandler } from "../localStorage/storage";
 import { projectsContainer } from "../projectContainer";
+import { format } from "date-fns";
 
 export default function showTodo(todo, project) {
   const todoList = document.getElementById("list");
@@ -20,7 +21,7 @@ export default function showTodo(todo, project) {
   todoDetails.classList.add("todo-upper");
 
   const dueDate = document.createElement("p");
-  dueDate.textContent = `${todo.dueDate}`;
+  dueDate.textContent = `${format(new Date(todo.dueDate), "dd.MM.yyyy")}`;
   todoSummary.appendChild(dueDate);
 
   const priority = document.createElement("p");

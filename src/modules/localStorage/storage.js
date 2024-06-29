@@ -44,9 +44,9 @@ export const storageHandler = (function() {
         const defaultProject = createProject('Home Chores');
         projectsContainer.addProject(defaultProject);
     
-        const todo = createTodo('Buy milk', 'We need to buy milk, it is very important.', '13.12.2024', 'Low', 'must do this asap!');
-        const todo2 = createTodo('Wash dishes', 'Sink is full of dirty dishes, time to free the sink.', '13.12.2024', 'Medium', '');
-        const todo3 = createTodo('Make dinner', 'Dinner needs to be made this evening, no one wants to stay hungry!', '13.12.2024', 'High', 'would like to make some lasagna');
+        const todo = createTodo('Buy milk', 'We need to buy milk, it is very important.', '2024-07-01', 'Low', 'must do this asap!');
+        const todo2 = createTodo('Wash dishes', 'Sink is full of dirty dishes, time to free the sink.', '2024-07-01', 'Medium', '');
+        const todo3 = createTodo('Make dinner', 'Dinner needs to be made this evening, no one wants to stay hungry!', '2024-07-01', 'High', 'would like to make some lasagna');
         defaultProject.addTodo(todo);
         defaultProject.addTodo(todo2);
         defaultProject.addTodo(todo3);
