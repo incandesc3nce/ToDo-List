@@ -1,7 +1,7 @@
 import getPriorityCircle from "../helpers/getPriorityCircle";
-import removeTodo from "../builders/removeTodo";
+import removeTodo from "./removeTodo";
 
-export default function addTodo(todo, project) {
+export default function showTodo(todo, project) {
   const todoList = document.getElementById("list");
   const todoElement = document.createElement("li");
   todoElement.classList.add("todo");
@@ -9,7 +9,7 @@ export default function addTodo(todo, project) {
   const todoDetails = document.createElement("details");
 
   const todoSummary = document.createElement("summary");
-  
+
   const todoTitle = document.createElement("h3");
   todoTitle.textContent = `${todo.title}`;
   todoSummary.appendChild(todoTitle);
@@ -34,7 +34,7 @@ export default function addTodo(todo, project) {
   const doneLabel = document.createElement("label");
   doneLabel.textContent = "Done";
   doneLabel.setAttribute("for", "done");
-  doneLabel.classList.add("done-label"); 
+  doneLabel.classList.add("done-label");
 
   done.appendChild(doneLabel);
   done.appendChild(doneCheckbox);
@@ -57,13 +57,13 @@ export default function addTodo(todo, project) {
   });
 
   todoSummary.appendChild(deleteButton);
-  
+
   todoElement.appendChild(todoDetails);
-  
+
   const todoDescription = document.createElement("p");
   todoDescription.textContent = `${todo.description}`;
   todoDetails.appendChild(todoDescription);
-  
+
   const notes = document.createElement("div");
   const notesTitle = document.createElement("h4");
   notesTitle.textContent = "Notes:";
@@ -77,10 +77,8 @@ export default function addTodo(todo, project) {
 
     todoDetails.appendChild(notes);
   }
-  
+
   todoDetails.appendChild(notes);
-
-
 
   todoList.appendChild(todoElement);
 }
