@@ -87,12 +87,16 @@ export default function showTodo(todo, project) {
   
   editContainer.appendChild(edit);
   
-  if (todo.notes !== "" && todo.notes !== undefined) {
-    notes.appendChild(notesTitle);
-    notes.appendChild(notesText);
-    
-    todoDetails.appendChild(notes);
+  notes.appendChild(notesTitle);
+  notes.appendChild(notesText);
+  
+  if (todo.notes === "") {
+   todo.notes = "none";
+   notesText.textContent = `${todo.notes}`;
   }
+
+  todoDetails.appendChild(notes);
+  
   
   todoDetails.appendChild(notes);
   todoDetails.appendChild(editContainer);
