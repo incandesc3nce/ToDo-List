@@ -301,13 +301,6 @@ dialog label {
   font-size: min(1.5rem, 3vw);
 }
 
-dialog input {
-  border: 0;
-  border-radius: 10px;
-  padding: 0.5rem 1rem;
-
-  transition-duration: 0.2s;
-}
 
 dialog .buttons {
   display: flex;
@@ -318,16 +311,29 @@ dialog .buttons {
 dialog button {
   border: 0;
   border-radius: 10px;
-
+  
   padding: 0.5rem 1rem;
-
+  
   font-weight: 600;
-
+  
   transition-duration: 0.2s;
 }
 
 dialog button:hover {
   cursor: pointer;
-
+  
   scale: 1.1;
+}
+
+dialog input, dialog select, dialog textarea {
+  border: 2px solid #505050;
+  outline: none;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+
+  transition-duration: 0.2s;
+}
+
+dialog input:focus, dialog select:focus, dialog textarea:focus {
+  border: 2px solid #62b8ff;
 }
