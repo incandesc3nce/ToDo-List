@@ -115,6 +115,10 @@ aside h2 button:hover {
   scale: 1.2;
 }
 
+aside h2 button:focus {
+  outline: none;
+}
+
 main {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
