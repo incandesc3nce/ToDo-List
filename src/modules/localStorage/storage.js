@@ -60,5 +60,7 @@ export const storageHandler = (function() {
     }
   }
 
-  return {start, setProjects, removeProject};
+  start();
+
+  return {setProjects, removeProject};
 })();
