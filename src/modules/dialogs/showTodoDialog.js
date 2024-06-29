@@ -1,7 +1,7 @@
 import removeDialog from "../helpers/removeDialog";
 import createTodo from "../builders/createTodo";
 import showTodo from "../builders/showTodo";
-import { projects } from "../projectContainer";
+import { projectsContainer } from "../projectContainer";
 import getCurrentProject from "../helpers/getCurrentProject";
 import { format } from "date-fns"; 
 
@@ -129,7 +129,7 @@ export default function showTodoDialog() {
 
     const todo = createTodo(title.value, description.value, formattedDate, priority.value, notes.value);
     showTodo(todo);
-    projects[getCurrentProject()].addTodo(todo);
+    projectsContainer.getProject(getCurrentProject()).addTodo(todo);
 
     dialog.close();
   });
