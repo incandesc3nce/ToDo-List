@@ -270,6 +270,30 @@ footer a {
   cursor: pointer;
 }
 
+.edit-container {
+  display: flex;
+  justify-content: flex-start;
+
+  margin-top: 1rem;
+}
+.edit {
+  border: 0;
+  background-color: inherit;
+
+  color: #6a74ff;
+
+  font-weight: 600;
+
+  transition-duration: 0.3s;
+}
+.edit:hover {
+  cursor: pointer;
+
+  scale: 1.2;
+  border-bottom: 1px solid var(--text-color);
+}
+
+
 dialog {
   border: 0;
   border-radius: 10px;
@@ -281,6 +305,10 @@ dialog {
   -moz-transform: translateX(-50%) translateY(-50%);
   -ms-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
+}
+
+dialog:focus {
+  outline: none;
 }
 
 dialog::backdrop {
