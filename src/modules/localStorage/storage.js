@@ -13,7 +13,9 @@ export const storageHandler = (function() {
       storage.removeItem(x);
       return true;
     }
-    catch(e) {
+    catch(err) {
+      alert('Error: Local Storage is not available. Your changes will not be saved.');
+      console.log(err);
       return false;
     }
   }
