@@ -1,6 +1,3 @@
-import createProject from './builders/createProject';
-import createTodo from './builders/createTodo';
-
 export const projectsContainer = (function() {
   let projects = [];
 

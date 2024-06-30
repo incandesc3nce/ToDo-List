@@ -1,6 +1,5 @@
 import showTodo from "../builders/showTodo";
 import showTodoDialog from "../dialogs/showTodoDialog";
-import removeTodo from "../builders/removeTodo";
 
 export default function showTodos(project) {
   const content = document.getElementById("content");

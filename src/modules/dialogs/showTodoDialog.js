@@ -3,7 +3,6 @@ import createTodo from "../builders/createTodo";
 import showTodo from "../builders/showTodo";
 import { projectsContainer } from "../projectContainer";
 import getCurrentProject from "../helpers/getCurrentProject";
-import { format } from "date-fns"; 
 import { storageHandler } from "../localStorage/storage";
 
 export default function showTodoDialog() {
